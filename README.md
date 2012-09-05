@@ -10,7 +10,7 @@ Prerequisites
 Usage
 -----
 
-1. Clone this repo into some directory
+1. Clone this repo into some directory and cd into it
 2. Edit the Vagrantfile. The only thing that might need changing is the shared source folder. Have it point to some folder on your host machine that contains an index.php file.
 3. vagrant up
 4. Visit http://localhost:8080
