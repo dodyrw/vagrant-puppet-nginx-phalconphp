@@ -21,7 +21,7 @@ Troubleshooting
 
 Windows host machines can have some problems. It is always a good idea to enable GUI booting in the Vagrantfile for troubleshooting.
 
-* VirtualBox fails to boot the machine and complains about "host incompatibility". This has to do with some virtualization feature of your processor ("Vt-x" or something like that). VirtualBox needs this feature to be enabled in BIOS so go ahead and reboot now...
+* VirtualBox fails to start the guest VM and complains about "host incompatibility". This has to do with some virtualization feature of your processor ("Vt-x" or something like that). VirtualBox needs this feature to be enabled in BIOS so go ahead and reboot now...
 * Puppet provisioning fails because the Internet cannot be accessed from within the guest VM. Actually the Internet CAN be accessed but DNS lookups fail. The following trick is needed to get things working:
   1. Stop the guest VM using "vagrant halt"
   2. Open VirtualBox. You should see a VM with a long name such as "vagrant-puppet-nginx_1234245435". Open the settings for the VM and copy the VM name to the clipboard.
