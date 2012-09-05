@@ -29,8 +29,10 @@ service { 'php5-fpm':
 file { 'vagrant-nginx':
 	path => '/etc/nginx/sites-available/vagrant',
 	ensure => file,
+    replace => true,
 	require => Package['nginx'],
 	source => 'puppet:///modules/nginx/vagrant',
+    notify => Service['nginx'],
 }
 
 file { 'default-nginx-disable':

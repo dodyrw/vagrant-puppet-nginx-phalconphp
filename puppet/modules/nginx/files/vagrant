@@ -1,9 +1,9 @@
 server {
 	listen 80;
 	server_name _;
-	root /vagrant;
+	root /opt/my_project;
 	index index.php;
-
+    
 	location / {
 		try_files $uri /index.php;
 	}
