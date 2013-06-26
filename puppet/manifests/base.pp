@@ -6,12 +6,47 @@ exec { 'apt-get update':
 	command => '/usr/bin/apt-get update',
 }
 
+package { 'mc': 
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
 package { 'nginx': 
 	ensure => present,
 	require => Exec['apt-get update'],
 }
 
 package { 'php5-fpm':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'git-core':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'gcc':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'make':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'autoconf':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'php5-dev':
+	ensure => present,
+	require => Exec['apt-get update'],
+}
+
+package { 'php5-mysql':
 	ensure => present,
 	require => Exec['apt-get update'],
 }
@@ -50,4 +85,15 @@ file { 'vagrant-nginx-enable':
 		File['vagrant-nginx'],
 		File['default-nginx-disable'],
 	],
+}
+
+file { '/tmp/install-phalcon.sh':
+	ensure => present,
+        mode => '777',
+	source => 'puppet:///modules/phalcon/install-phalcon.sh'
+}
+
+exec { 'exec_install-phalcon':
+	command => '/tmp/install-phalcon.sh',
+	require => File['/tmp/install-phalcon.sh']
 }
