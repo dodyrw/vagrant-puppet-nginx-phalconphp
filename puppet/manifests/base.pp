@@ -95,5 +95,6 @@ file { '/tmp/install-phalcon.sh':
 
 exec { 'exec_install-phalcon':
 	command => '/tmp/install-phalcon.sh',
-	require => File['/tmp/install-phalcon.sh']
+	require => File['/tmp/install-phalcon.sh'],
+	onlyif => '/bin/ls -a /usr/lib/php5/* | /bin/grep -c phalcon.so',
 }
