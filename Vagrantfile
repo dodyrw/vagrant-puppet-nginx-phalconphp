@@ -1,11 +1,11 @@
 Vagrant::Config.run do |config|
 
   # The base box we are building off
-  config.vm.box = "precise32"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Boot with a GUI so you can see the screen. Good for debugging startup issues. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -24,7 +24,7 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # For this example, this folder should contain an index.php file.
-  config.vm.share_folder "my_project", "/opt/my_project", "C:/Users/Johannes/Code/my_project"
+  config.vm.share_folder "my_project", "/opt/my_project", "%%% LOCAL PATH HERE %%%"
 
   # Enable provisioning with Puppet stand alone.
 
