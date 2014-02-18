@@ -29,6 +29,16 @@ Windows host machines can have some problems. It is always a good idea to enable
   </pre>
   4. Start the VM again using "vagrant up"
 
+
+New packages added by me (dodyrw)
+---------------------------------
+- curl
+- php5-cli
+- php5-gd
+- php5-curl
+- mysql server & client
+
+
 Hints
 -----
 
